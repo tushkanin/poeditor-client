@@ -234,7 +234,7 @@ def main():
 
     args = parser.parse_args()
     config = _load_config(args.config_file)
-    languages = args.languages[1:] if args.languages else None
+    languages = args.languages
 
     if "init" == args.command:
         print("Initialize project")
