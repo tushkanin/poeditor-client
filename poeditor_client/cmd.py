@@ -75,7 +75,7 @@ def init(config):
             project_id = config.get(s, "project_id")
 
             # 1. Push terms
-            terms = config.get(s, 'terms', None) if config.has_option(s, 'terms') else None
+            terms = config.get(s, 'terms') if config.has_option(s, 'terms') else None
             if terms:
                 project_id = config.get(s, "project_id")
                 print(" - Terms: {0}".format(terms))
@@ -181,7 +181,7 @@ def pushTerms(config, sync_terms=False):
 
     for s in sections:
         if s.startswith("project."):
-            terms = config.get(s, 'terms', None) if config.has_option(s, 'terms') else None
+            terms = config.get(s, 'terms') if config.has_option(s, 'terms') else None
             if terms:
                 project_id = config.get(s, "project_id")
                 print(" - Project: {0}, {1}\n".format(s, terms))
